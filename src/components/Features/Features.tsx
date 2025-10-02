@@ -13,8 +13,8 @@ const features = [
 
 export default function Features() {
   return (
-    <section className={styles.features} id="features">
-      <div className={styles.container}>
+    <section className={styles["features"]} id="features">
+      <div className={styles["container"]}>
         <h2>Why Choose ConvertPro?</h2>
         <p className={styles["featuresSubtitle"]}>
           Industry-leading conversion tools trusted by professionals worldwide
