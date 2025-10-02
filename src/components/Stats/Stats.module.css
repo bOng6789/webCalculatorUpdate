@@ -1,0 +1,50 @@
+/* src/components/Stats/Stats.module.css */
+
+/* explicit classes to avoid inheritance/specificity issues */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.stats {
+  background: white;
+  padding: 3rem 0;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+/* grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+
+/* item wrapper */
+.statItem {
+  padding: 1rem;
+}
+
+/* explicit styles for the number (h3) */
+.statNumber {
+  font-size: 2.5rem;
+  color: #667eea;
+  margin: 0 0 0.5rem 0; /* set margin explicitly (reset may have removed it) */
+  font-weight: 700;
+  line-height: 1; /* control vertical spacing */
+}
+
+/* explicit styles for the description (p) */
+.statDesc {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 0; /* ensure no default margins */
+  line-height: 1.3;
+}
