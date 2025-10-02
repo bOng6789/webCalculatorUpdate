@@ -1,27 +1,25 @@
-
 import Header from "./components/Header/Header";
-import Hero from "./components/Hero";
-import Categories from "./components/Categories";
+import Footer from "./components/Footer/Footer";
 import HowItWorks from "./components/HowItWorks/HowItWorks";
 import Features from "./components/Features/Features";
 import Stats from "./components/Stats/Stats";
 import CTA from "./components/CTA/CTA";
-import Footer from "./components/Footer/Footer";
 
-import "./styles/global.css"; 
+import Homepage from "./components/Homepage";
+
+import "./styles/global.css";
 
 function App() {
   return (
     <>
       <Header />
       <main>
-        <Hero />
-        <Categories />
-        <HowItWorks />
-        <Features />
-        <Stats />
-        <CTA />
+        <Homepage />   {/* ✅ load nội dung trang ở đây */}
       </main>
+      <HowItWorks />
+      <Features />
+      <Stats />
+      <CTA />
       <Footer />
     </>
   );

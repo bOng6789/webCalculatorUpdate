@@ -1,4 +1,7 @@
+// src/components/Converter/Converter.tsx
+
 import { useState } from "react";
+import styles from "./Converter.module.css";
 
 type ConversionFn = (val: number) => number;
 
@@ -36,10 +39,10 @@ export default function Converter() {
   };
 
   return (
-    <div className="quick-convert">
+    <div className={styles["quick-convert"]}>
       <h3>Quick Conversion Tool</h3>
-      <div className="convert-form">
-        <div className="form-group">
+      <div className={styles["convert-form"]}>
+        <div className={styles["form-group"]}>
           <label>From:</label>
           <input
             type="number"
@@ -53,10 +56,10 @@ export default function Converter() {
             <option>Miles per hour (mph)</option>
           </select>
         </div>
-        <button className="convert-btn" onClick={convert} title="Convert">
+        <button className={styles["convert-btn"]} onClick={convert} title="Convert">
           ⇄
         </button>
-        <div className="form-group">
+        <div className={styles["form-group"]}>
           <label>To:</label>
           <input type="text" value={toValue} readOnly />
           <select value={toUnit} onChange={(e) => setToUnit(e.target.value)}>
