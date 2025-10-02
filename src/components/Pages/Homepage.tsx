@@ -1,5 +1,5 @@
 import Header from "../Header/Header";
-import Hero from "../Converter/Hero";
+import HeroHomepage from "../Hero/HeroHomepage";
 import Categories from "../Categories";
 import HowItWorks from "../HowItWorks/HowItWorks";
 import Features from "../Features/Features";
@@ -12,7 +12,7 @@ export default function Homepage() {
   return (
     <>
       <Header />
-      <Hero />
+      <HeroHomepage />
       <Categories />
       <HowItWorks />
       <Features />

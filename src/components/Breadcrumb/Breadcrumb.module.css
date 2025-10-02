@@ -1,0 +1,31 @@
+/* src/components/Breadcrumb/Breadcrumb.module.css */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.breadcrumb {
+  background: white;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.breadcrumbList {
+  display:flex;
+  list-style:none;
+  gap:0.5rem;
+  align-items:center;
+}
+
+.breadcrumbList li a {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.breadcrumbList li:not(:last-child)::after {
+  content: '›';
+  margin-left: 0.5rem;
+  color: #999;
+}

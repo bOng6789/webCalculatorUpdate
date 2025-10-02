@@ -1,0 +1,27 @@
+/* src/components/Hero/HeroCategoriesPageTemplate.module.css */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.pageHero {
+  background: linear-gradient(135deg,#667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.pageHero h1 {
+    font-size:3rem;
+    margin-bottom:1rem;
+    text-shadow:2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.pageHero p {
+    font-size:1.3rem;
+    opacity:0.9;
+    max-width:600px;
+    margin:0 auto;
+}

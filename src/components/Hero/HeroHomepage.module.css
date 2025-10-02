@@ -6,7 +6,7 @@
     color: white;
 }
 
-.hero h1 {
+.heroH1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -25,4 +25,18 @@
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.animate {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.highlight {
+    background: linear-gradient(120deg, #ffd700 0%, #ffd700 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.3em;
+    background-position: 0 88%;
+    color: #333;
 }

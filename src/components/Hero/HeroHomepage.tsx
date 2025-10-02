@@ -1,12 +1,12 @@
 // src/components/Converter/Hero.tsx
 
-import styles from "./Hero.module.css";
-import Converter from "./Converter";
+import styles from "./HeroHomepage.module.css";
+import Converter from "../Converter/Converter";
 
-export default function Hero() {
+export default function HeroHomepage() {
   return (
     <section className={styles["hero"]} id="home">
-      <h1 className={styles["animate"]}>Professional Unit Converter</h1>
+      <h1 className={styles["heroH1"]}>Professional Unit Converter</h1>
       <p className={styles["heroSubtitle"]}>
         The <span className={styles["highlight"]}>most comprehensive</span> collection of conversion calculators
       </p>
