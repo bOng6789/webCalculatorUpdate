@@ -4,13 +4,13 @@ import styles from "./Header.module.css";
 
 export default function Header() {
   return (
-    <header className={styles.header}>
-      <nav className={styles.container}>
-        <div className={styles.logo}>
+    <header className={styles["header"]}>
+      <nav className={styles["container"]}>
+        <div className={styles["logo"]}>
           <i className="fas fa-calculator"></i>
           ConvertPro
         </div>
-        <ul className={styles["nav-links"]}>
+        <ul className={styles["navLinks"]}>
           <li><a href="#home">Home</a></li>
           <li><a href="#categories">Calculators</a></li>
           <li><a href="#features">Features</a></li>

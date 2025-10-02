@@ -4,8 +4,8 @@ import styles from "./Footer.module.css";
 
 export default function Footer() {
   return (
-    <footer className={styles.footer}>
-      <div className={styles.footerLinks}>
+    <footer className={styles["footer"]}>
+      <div className={styles["footerLinks"]}>
         <a href="#privacy">Privacy Policy</a>
         <a href="#terms">Terms of Use</a>
         <a href="#api">API Documentation</a>

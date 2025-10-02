@@ -31,19 +31,19 @@ nav {
     gap: 0.5rem;
 }
 
-.nav-links {
+.navLinks {
     display: flex;
     gap: 2rem;
     list-style: none;
 }
 
-.nav-links a {
+.navLinks a {
     text-decoration: none;
     color: #333;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
+.navLinks a:hover {
     color: #667eea;
 }

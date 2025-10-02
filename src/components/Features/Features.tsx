@@ -16,13 +16,13 @@ export default function Features() {
     <section className={styles.features} id="features">
       <div className={styles.container}>
         <h2>Why Choose ConvertPro?</h2>
-        <p className={styles["features-subtitle"]}>
+        <p className={styles["featuresSubtitle"]}>
           Industry-leading conversion tools trusted by professionals worldwide
         </p>
-        <div className={styles["features-grid"]}>
+        <div className={styles["featuresGrid"]}>
           {features.map((f, i) => (
-            <div className={styles["feature-item"]} key={i}>
-              <div className={styles["feature-icon"]}>{f.icon}</div>
+            <div className={styles["featureItem"]} key={i}>
+              <div className={styles["featureIcon"]}>{f.icon}</div>
               <h3>{f.title}</h3>
               <p>{f.desc}</p>
             </div>

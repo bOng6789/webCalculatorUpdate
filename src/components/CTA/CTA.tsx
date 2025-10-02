@@ -7,8 +7,8 @@ export default function CTA() {
     <section className={styles.cta}>
       <h2>Start Converting Today</h2>
       <p>Join millions of professionals who rely on ConvertPro for accurate conversions</p>
-      <a href="#categories" className={styles["cta-btn"]}>Explore All Tools</a>
-      <a href="#contact" className={`${styles["cta-btn"]} ${styles.secondary}`}>Get Support</a>
+      <a href="#categories" className={styles["ctaBtn"]}>Explore All Tools</a>
+      <a href="#contact" className={`${styles["ctaBtn"]} ${styles.secondary}`}>Get Support</a>
     </section>
   );
 }

@@ -7,17 +7,17 @@
     text-align: center;
 }
 
-.footer-links {
+.footerLinks {
     margin-bottom: 1rem;
 }
 
-.footer-links a {
+.footerLinks a {
     color: #bdc3c7;
     text-decoration: none;
     margin: 0 1rem;
     transition: color 0.3s ease;
 }
 
-.footer-links a:hover {
+.footerLinks a:hover {
     color: white;
 }
