@@ -1,4 +1,5 @@
 // src/App.tsx
+
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import useRouteProgress from "./hooks/useRouteProgress";
 import useScrollAndFocus from "./hooks/useScrollAndFocus";
@@ -6,7 +7,7 @@ import useScrollAndFocus from "./hooks/useScrollAndFocus";
 import Homepage from "./components/Pages/Homepage";
 import AboutPage from "./components/Pages/AboutPage";
 import CategoriesPageTemplate from "./components/Pages/CategoriesPageTemplate";
-// import ConverterTemplate from "./components/Pages/ConverterTemplate";
+import ConverterTemplate from "./components/Pages/ConverterTemplate";
 
 import "./styles/global.css";
 
@@ -40,6 +41,14 @@ function AnimatedRoutes() {
           </main>
         }
       />
+      <Route
+        path="/:id/:subId"
+        element={
+          <main ref={mainRef} tabIndex={-1} aria-live="polite">
+            <ConverterTemplate />
+          </main>
+        }
+      />
     </Routes>
   );
 }
@@ -56,3 +65,4 @@ export default function App() {
     </BrowserRouter>
   );
 }
+
