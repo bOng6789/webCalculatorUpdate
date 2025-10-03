@@ -17,6 +17,16 @@
   list-style:none;
   gap:0.5rem;
   align-items:center;
+  
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #667eea;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .breadcrumbList li a {
