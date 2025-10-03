@@ -51,20 +51,23 @@ export default function Categories() {
           Professional-grade conversion tools organized by industry and application
         </p>
         <div className={styles["categoryGrid"]}>
-          {categories.map((cat, i) => (
-            <Link to={cat.link} className={styles["categoryCard"]} key={i}>
-              <div className={styles["categoryIcon"]}>{cat.icon}</div>
-              <h3>{cat.title}</h3>
-              <p>{cat.desc}</p>
-              <div className={styles["popularTools"]}>
-                <div className={styles["toolsList"]}>
-                  {cat.tags.map((t, j) => (
-                    <span className={styles["toolTag"]} key={j}>{t}</span>
-                  ))}
+          {categories.map((cat) => {
+            console.log("cat:", cat);   // log mỗi lần render
+            return (
+              <Link to={cat.link} className={styles.categoryCard} key={cat.link}>
+                <div className={styles.categoryIcon}>{cat.icon}</div>
+                <h3>{cat.title}</h3>
+                <p>{cat.desc}</p>
+                <div className={styles.popularTools}>
+                  <div className={styles.toolsList}>
+                    {cat.tags.map((t) => (
+                      <span className={styles.toolTag} key={t}>{t}</span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>

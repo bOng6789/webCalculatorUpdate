@@ -35,6 +35,7 @@ nav {
     display: flex;
     gap: 2rem;
     list-style: none;
+    transition: all;
 }
 
 .navLinks a {
