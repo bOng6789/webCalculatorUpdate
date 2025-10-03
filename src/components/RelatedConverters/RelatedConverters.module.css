@@ -1,0 +1,73 @@
+/* src/components/RelatedConverters/RelatedConverters.module.css */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.sectionHeader {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.sectionHeader h2 {
+    font-size: 2.2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.sectionHeader p {
+    font-size: 1.1rem;
+    color: #6c757d;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Related Converters */
+.relatedConverters {
+    background: white;
+    padding: 4rem 0;
+}
+
+.relatedGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.relatedItem {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.relatedItem:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: #667eea;
+    text-decoration: none;
+    color: inherit;
+}
+
+.relatedIcon {
+    font-size: 2.5rem;
+    color: #667eea;
+    margin-bottom: 1rem;
+}
+
+.relatedItem h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.relatedItem p {
+    color: #6c757d;
+    font-size: 0.95rem;
+}

@@ -1,3 +1,5 @@
+// src/components/Hero/HeroCategoriesPageTemplate.tsx
+
 import styles from './HeroCategoriesPageTemplate.module.css';
 
 export default function HeroCategoriesPageTemplate() {

@@ -1,3 +1,5 @@
+// src/components/Pages/CategoriesPageTemplate.tsx
+
 import Header from "../Header/Header";
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
 import HeroCategoriesPageTemplate from "../Hero/HeroCategoriesPageTemplate";

@@ -1,3 +1,5 @@
+// src/components/Pages/Homepage.tsx
+
 import Header from "../Header/Header";
 import HeroHomepage from "../Hero/HeroHomepage";
 import Categories from "../Catgories/Categories";

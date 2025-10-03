@@ -6,6 +6,7 @@ import useScrollAndFocus from "./hooks/useScrollAndFocus";
 import Homepage from "./components/Pages/Homepage";
 import AboutPage from "./components/Pages/AboutPage";
 import CategoriesPageTemplate from "./components/Pages/CategoriesPageTemplate";
+// import ConverterTemplate from "./components/Pages/ConverterTemplate";
 
 import "./styles/global.css";
 
