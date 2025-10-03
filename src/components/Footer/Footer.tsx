@@ -10,7 +10,7 @@ export default function Footer() {
         <a href="#terms">Terms of Use</a>
         <a href="#api">API Documentation</a>
         <a href="#support">Support</a>
-        <a href="#about">About Us</a>
+        <a href="about">About Us</a>
       </div>
       <p>
         &copy; 2025 ConvertPro. All rights reserved. Professional unit conversion tools for everyone.

@@ -19,6 +19,10 @@
 .toolsGrid { display:grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem; margin-bottom:2rem; }
 
 .toolCard {
+  text-decoration: none; /* bỏ gạch dưới */
+  color: inherit;        /* giữ nguyên màu chữ từ parent */
+  font-weight: normal;   /* bỏ in đậm mặc định */
+  display: block;        /* cho click toàn bộ card */
   background:white;
   border-radius:15px;
   padding:2rem;

@@ -13,7 +13,7 @@ function AnimatedRoutes() {
     <Routes>
       <Route path="/" element={<Homepage />} />
       <Route path="/about" element={<AboutPage />} />
-      <Route path="/automotive" element={<CategoriesPageTemplate />} />
+      <Route path="/:id" element={<CategoriesPageTemplate />} />
     </Routes>
   );
 }

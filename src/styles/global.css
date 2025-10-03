@@ -142,7 +142,7 @@ nav {
     transform: rotate(180deg);
 } */
 
-.categories {
+/* .categories {
     background: white;
     padding: 4rem 0;
 }
@@ -201,9 +201,9 @@ nav {
 .category-card p {
     color: #666;
     line-height: 1.5;
-}
+} */
 
-.popular-tools {
+/* .popular-tools {
     background: #f8f9fa;
     padding: 2rem 0;
     margin-top: 1rem;
@@ -223,7 +223,7 @@ nav {
     border-radius: 15px;
     font-size: 0.9rem;
     font-weight: 500;
-}
+} */
 
 /* .features {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);

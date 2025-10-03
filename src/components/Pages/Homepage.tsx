@@ -1,6 +1,6 @@
 import Header from "../Header/Header";
 import HeroHomepage from "../Hero/HeroHomepage";
-import Categories from "../Categories";
+import Categories from "../Catgories/Categories";
 import HowItWorks from "../HowItWorks/HowItWorks";
 import Features from "../Features/Features";
 import Stats from "../Stats/Stats";
