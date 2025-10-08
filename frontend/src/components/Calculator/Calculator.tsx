@@ -1,6 +1,7 @@
 // src/components/Calculator/Calculator.tsx
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import styles from "./Calculator.module.css";
 
 // export default function Calculator() {
@@ -65,12 +66,51 @@ import styles from "./Calculator.module.css";
 // }
 
 export default function Calculator() {
+  //////////////////////////////////////////////////
+  const {id, subId} = useParams();
+  //////////////////////////////////////////////////
+  const { slug } = useParams(); // ví dụ: slug = "kg-to-pounds"
   const [fromValue, setFromValue] = useState<number | string>(1);
   const [toValue, setToValue] = useState<string>("");
-  const [fromUnit, setFromUnit] = useState("Meters (m)");
-  const [toUnit, setToUnit] = useState("Feet (ft)");
+  const [fromUnit, setFromUnit] = useState(""); //useState("Meters (m)");
+  const [toUnit, setToUnit] = useState(""); //useState("Feet (ft)");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
+  //////////////////////////////////////////////////
+  console.log("id = ", id)
+  console.log("subId = ", subId)
+  //////////////////////////////////////////////////
+
+   // ✳️ Tách slug thành đơn vị nguồn và đích
+  useEffect(() => {
+    if (slug) {
+      const [from, , to] = slug.split("-");
+      setFromUnit(formatUnit(from));
+      setToUnit(formatUnit(to));
+    }
+  }, [slug]);
+
+   // ✳️ Hàm format để hiển thị đẹp hơn
+  const formatUnit = (unit: string) => {
+    switch (unit.toLowerCase()) {
+      case "kg":
+        return "Kilograms (kg)";
+      case "pounds":
+        return "Pounds (lbs)";
+      case "meters":
+        return "Meters (m)";
+      case "feet":
+        return "Feet (ft)";
+      case "celsius":
+        return "Celsius (°C)";
+      case "fahrenheit":
+        return "Fahrenheit (°F)";
+      default:
+        return unit;
+    }
+  };
+  //////////////////////////////////////////////////
 
   const convert = async () => {
     setLoading(true);
@@ -107,6 +147,11 @@ export default function Calculator() {
     }
   };
 
+  //////////////////////////////////////////////////
+  console.log("fromUnit = ", fromUnit)
+  console.log("toUnit = ", toUnit)
+  //////////////////////////////////////////////////
+
   return (
     <section className={styles["calculatorSection"]}>
       <div className={styles["container"]}>
@@ -114,7 +159,7 @@ export default function Calculator() {
           <div className={styles["converterForm"]}>
             {/* Input group */}
             <div className={styles["formGroup"]}>
-              <label>From:</label>
+              <label>From: ({fromUnit})</label>
               <input
                 type="number"
                 step="any"
@@ -145,7 +190,7 @@ export default function Calculator() {
 
             {/* Output group */}
             <div className={styles["formGroup"]}>
-              <label>To:</label>
+              <label>To: ({toUnit})</label>
               <input type="text" value={toValue} readOnly />
               <select
                 className={styles["unitLabel"]}
