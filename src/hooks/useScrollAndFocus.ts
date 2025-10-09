@@ -1,33 +1,42 @@
-// src/hooks/file useScrollAndFocus.ts
 import { useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 type Opts = { offset?: number };
 
-export default function useScrollAndFocus(opts: Opts = {}) {
-  const { offset = 0 } = opts;
+export default function useScrollAndFocus({ offset = 0 }: Opts = {}) {
   const location = useLocation();
+  const navigate = useNavigate();
   const ref = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    // Nếu có hash -> cuộn tới element tương ứng, ngược lại cuộn top
-    const id = location.hash?.replace("#", "");
-    if (id) {
-      const el = document.getElementById(id);
-      if (el) {
-        const y = el.getBoundingClientRect().top + window.pageYOffset - offset;
-        window.scrollTo({ top: y, behavior: "smooth" });
-      }
-    } else {
-      window.scrollTo({ top: 0, behavior: "auto" });
-    }
+    const state = location.state as { scrollTo?: string } | null;
+    const targetId = state?.scrollTo;
 
-    // Đặt focus vào main để SR/keyboard biết nội dung mới
-    // dùng rAF để chờ DOM ổn định sau khi route/motion mount
+    let tries = 0;
+    const tryScroll = () => {
+      if (targetId) {
+        const el = document.getElementById(targetId);
+        if (el) {
+          const y = el.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: y, behavior: "smooth" });
+          // Xóa state để F5 không cuộn lại
+          navigate(location.pathname, { replace: true });
+          return;
+        }
+      } else {
+        // Không có state => cuộn top khi đổi route
+        window.scrollTo({ top: 0, behavior: "auto" });
+        return;
+      }
+      // chờ nội dung mount rồi thử lại vài lần
+      if (tries++ < 15) setTimeout(tryScroll, 50);
+    };
+
     requestAnimationFrame(() => {
-      ref.current?.focus?.();
+      tryScroll();
+      ref.current?.focus?.(); // accessibility: focus vào main
     });
-  }, [location, offset]);
+  }, [location, offset, navigate]);
 
   return ref;
 }

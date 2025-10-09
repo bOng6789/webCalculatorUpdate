@@ -1,55 +1,65 @@
 // src/components/Header/Header.tsx
-import { Link } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./Header.module.css";
 
 export default function Header() {
-  const HEADER_OFFSET = 72; // chỉnh đúng chiều cao header của bạn
+  const location = useLocation();
+  const HEADER_OFFSET = 72;
 
-  const withOffset = (el: HTMLElement) => {
+  const scrollToId = (id: string) => {
+    const el = document.getElementById(id);
+    if (!el) return;
     const y = el.getBoundingClientRect().top + window.pageYOffset - HEADER_OFFSET;
     window.scrollTo({ top: y, behavior: "smooth" });
   };
 
+  const onSamePageScroll =
+    (id: "top" | "categories" | "features" | "contact") =>
+    (e: React.MouseEvent<HTMLAnchorElement>) => {
+      if (location.pathname === "/") {
+        e.preventDefault(); // không đổi route, chỉ cuộn
+        scrollToId(id);
+      }
+    };
+
   return (
     <header className={styles.header}>
       <nav className={styles.container} aria-label="Primary navigation">
-        {/* Logo bấm về top của trang Home */}
-        <HashLink smooth to="/#top" className={styles.logo} scroll={withOffset}>
+        {/* Logo -> về "/" và cuộn lên đầu */}
+        <Link
+          to="/"
+          state={{ scrollTo: "top" }}
+          className={styles.logo}
+          onClick={onSamePageScroll("top")}
+        >
           <i className="fas fa-calculator" aria-hidden="true"></i>
-          <img
-            src="/calculator.png"
-            alt="ConvertPro"
-            className={styles.logoImg}
-            width={28}
-            height={28}
-          />
+          <img src="/calculator.png" alt="ConvertPro" className={styles.logoImg} width={28} height={28} />
           <span className={styles.brand}>ConvertPro</span>
-        </HashLink>
+        </Link>
 
         <ul className={styles.navLinks}>
           <li>
-            <HashLink smooth to="/#top" scroll={withOffset}>
+            <Link to="/" state={{ scrollTo: "top" }} onClick={onSamePageScroll("top")}>
               Home
-            </HashLink>
+            </Link>
           </li>
           <li>
-            <HashLink smooth to="/#categories" scroll={withOffset}>
+            <Link to="/" state={{ scrollTo: "categories" }} onClick={onSamePageScroll("categories")}>
               Calculators
-            </HashLink>
+            </Link>
           </li>
           <li>
-            <HashLink smooth to="/#features" scroll={withOffset}>
+            <Link to="/" state={{ scrollTo: "features" }} onClick={onSamePageScroll("features")}>
               Features
-            </HashLink>
+            </Link>
           </li>
           <li>
             <Link to="/about">About</Link>
           </li>
           <li>
-            <HashLink smooth to="/#contact" scroll={withOffset}>
+            <Link to="/" state={{ scrollTo: "contact" }} onClick={onSamePageScroll("contact")}>
               Contact
-            </HashLink>
+            </Link>
           </li>
         </ul>
       </nav>
